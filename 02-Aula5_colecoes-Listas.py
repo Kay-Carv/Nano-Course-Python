@@ -45,8 +45,8 @@ while resposta.lower() != 'não' and resposta.lower() != 'nao':
 
 total = 0
 
-for caloria in calorias:
-    print(f"\tForam consumidas '{caloria}' calorias na {len(calorias)}° refeição")
+for i,caloria in enumerate(calorias, start=1):
+    print(f"\tForam consumidas '{caloria}' calorias na {i}° refeição")
     total = total + caloria
 
 print(f"\n\tForam consumidas {total} de calorias em {len(calorias)} refeição(ões)")
