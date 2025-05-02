@@ -77,12 +77,30 @@ cavaleiros_jedi.sort() # do maior para o menor
 print(f"Após o uso do sort, a lista é \n{cavaleiros_jedi}")
 cavaleiros_jedi.sort()
 print(f"Após o uso do sort(reverse=True), a lista é \n{cavaleiros_jedi}")
+
+"""
+| Método                          | Efeito                                                                 |
+|---------------------------------|------------------------------------------------------------------------|
+| `lista.append(elemento)`        | Adiciona um elemento no final da lista.                               |
+| `lista.index(elemento)`         | Retorna o índice de um determinado elemento.                          |
+| `lista.insert(posicao, item)`   | Insere um elemento em uma posição específica, fazendo com que os elementos posteriores a ele recebam novos índices. |
+| `lista.pop()`                   | Remove o último elemento de uma lista.                                |
+| `lista.pop(posicao)`            | Remove o elemento que está em uma posição específica da lista.        |
+| `lista.count("item")`           | Retorna o número de vezes que um elemento aparece na lista.           |
+| `lista.sort()`                  | Ordena a lista em ordem crescente.                                    |
+| `lista.sort(reverse=True)`      | Ordena a lista em ordem decrescente.                                  |
+| `lista.reverse()`               | Inverte a ordem dos elementos de uma lista.                           |
+| `lista.remove(item)`            | Remove um item da lista.                                              |
+"""
 # %%
 
 # SET (Conjuntos)
 
 
 "SET (Conjuntos)"
+
+"   Os sets são estruturas do Python que permitem armazenar diversos valores assim como as listas, mas não permite repetições. Dessa forma, eles se"
+"tornam candidatos perfeitos para todos os cenários em que precisamos trabalhar com conjuntos de VALORES ÚNICOS."
 
 "Os SETs apresentam uma estrutura parecida com as listas mas não aceitam valores iguai"
 
