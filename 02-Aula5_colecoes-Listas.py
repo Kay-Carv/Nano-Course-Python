@@ -61,19 +61,19 @@ print(f"\tO consumo de calorias médio por qtd de refeição foi de: {media}")
 
 cavaleiros_jedi = ["Obi-Wan Kenobi", "Mace Windu", "Mestre Yoda", "Luke Skywalker", "Anakin Skywalker"]
 print(f"A lista original é \n{cavaleiros_jedi}")
-cavaleiros_jedi.append("Mestre Yoda")
+cavaleiros_jedi.append("Mestre Yoda")    #Adiciona na lista
 print(f"Após a adição do elemento Mestre Yoda utilizando o append, a lista é \n{cavaleiros_jedi}")
-print(f"O índice do elemento Mace Windu é {cavaleiros_jedi.index('Mace Windu')}")
-cavaleiros_jedi.insert(1, "Rey")
+print(f"O índice do elemento Mace Windu é {cavaleiros_jedi.index('Mace Windu')}")   #Percorre a lista e busca o elemento descrito
+cavaleiros_jedi.insert(1, "Rey")    #Insere um valor no indice 1
 print(f"Após a adição do elemento Rey na posição 1 utilizando o insert, a lista é \n{cavaleiros_jedi}")
-print(f"A contagem do elemento Mestre Yoda é {cavaleiros_jedi.count('Mestre Yoda')}")
-cavaleiros_jedi.pop()
+print(f"A contagem do elemento Mestre Yoda é {cavaleiros_jedi.count('Mestre Yoda')}") # Mostra em qual indice a str está
+cavaleiros_jedi.pop()       # Remove o último indice
 print(f"Após o uso do pop, a lista é \n{cavaleiros_jedi}")
-cavaleiros_jedi.pop(0)
+cavaleiros_jedi.pop(0)      # Retira o valor do indice
 print(f"Após o uso do pop com o índice 0, a lista é \n{cavaleiros_jedi}")
-cavaleiros_jedi.reverse()
+cavaleiros_jedi.reverse()   #Reverte para o estado inicial da lista
 print(f"Após o uso do reverse, a lista é \n{cavaleiros_jedi}")
-cavaleiros_jedi.sort()
+cavaleiros_jedi.sort() # do maior para o menor
 print(f"Após o uso do sort, a lista é \n{cavaleiros_jedi}")
 cavaleiros_jedi.sort()
 print(f"Após o uso do sort(reverse=True), a lista é \n{cavaleiros_jedi}")
