@@ -78,3 +78,73 @@ print(f"Após o uso do sort, a lista é \n{cavaleiros_jedi}")
 cavaleiros_jedi.sort()
 print(f"Após o uso do sort(reverse=True), a lista é \n{cavaleiros_jedi}")
 # %%
+
+# SET (Conjuntos)
+
+
+"SET (Conjuntos)"
+
+"Os SETs apresentam uma estrutura parecida com as listas mas não aceitam valores iguai"
+
+# Criar set vazio
+conjunto = set()
+print(type(conjunto))
+
+# Crindo set apartir de uma lsita
+
+lista = ['kayque', 'Francisco', 'Ana', 'kayque']
+
+
+lista_set = set(lista)
+print(f"\n{lista}\n{lista_set}\nO set não retornou o valor repetido '{lista[0]}'\n")
+
+
+# set com valores
+
+conjunto2 = {'Bianca', 'Carol', 'Ana', 'Bianca'}
+print(conjunto2)
+
+
+# Adicionando elementos
+
+conjunto2.add("Paula")
+print(conjunto2, "\n")
+
+# Removendo elementos do set
+set1 = {"Google", "Youtube", "Excel", "Docs"}
+set2 = {"PorwerPoint", "Word", "Office", "Excel", "Planilhas"}
+
+print(f"conjunto 1: {set1}")
+print(f"conjunto 2: {set2}")
+
+"Fazendo comparação entre os conjuntos"
+set1.difference_update(set2)
+print(f"O primeiro set agora contém {set1} pois removel os valores iguais entre os dois conjuntos")
+
+# Remover um valor específico
+
+set2.remove("Planilhas")
+print(f"O elemento Planilhas foi removido de: {set2}")
+
+
+"""Obs: se você tentar remover um elemento que não existe, vai retornar um erro, logo usamos {discard}"""
+
+
+set2.discard("Google")
+print(set2)
+
+"""
+| Método                                | Descrição                                                                 |
+|---------------------------------------|---------------------------------------------------------------------------|
+| `set.symmetric_difference(set1, set2)`| Retona um set com os elementos que não se repetem em dois sets.          |
+| `set.union(set1, set2, ...)`          | Retorna um set contendo os elementos dos sets indicados                   |
+| `set.intersection(set1, set2, ...)`   | Retorna um set com os elementos que existem em todos os sets indicados    |
+| `set.isdisjoint(set2)`                | Retorna verdadeiro se os dois sets contêm elementos diferentes e falso se algum dos elementos for igual. |
+| `set.issubset(set2)`                  | Retorna verdadeiro se o set está contido em outro.                        |
+| `set.issuperset(set2)`                | Retorna verdadeiro se um set contém outro set.                            |
+| `set.clear()`                         | Remove todos os elementos do set.                                         |
+| `set.copy()`                          | Retorna uma cópia do set.                                                 |
+| `set.pop()`                           | Remove um elemento aleatório do set.                                      |
+| `set.remove()`                        | Remove um elemento do set e retorna um erro caso o elemento não exista.   |
+| `set.discard()`                       | Remove um elemento do set e não retorna um erro caso o elemento não exista. |
+"""
