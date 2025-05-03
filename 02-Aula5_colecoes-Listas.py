@@ -92,6 +92,45 @@ print(f"Após o uso do sort(reverse=True), a lista é \n{cavaleiros_jedi}")
 | `lista.reverse()`               | Inverte a ordem dos elementos de uma lista.                           |
 | `lista.remove(item)`            | Remove um item da lista.                                              |
 """
+
+# %%
+
+# Trabalhando em TUPLAS
+
+"Tem propiedades parecidas com as listas, entretanto a sua principal diferença é a imutalidade. Já que as TUPLAS são imutáveis após a sua criação"
+
+
+tupla = ('carol', 1.68, 59)
+
+print(type(tupla))
+print(tupla)
+
+for valor in tupla:
+    print(valor)
+
+# Criando um jogo de Batalha Naval
+
+
+# atribuindo posição dos inimigos (x, y)
+inimigos = [(50, 30),(100, 90), (10,30), (45,50)]
+
+for inimigo in inimigos:
+    print(inimigo)
+    
+for x, y in inimigos:
+    print(f"A posição x é: {x}\nA posição y é: {y}")
+
+x = int(input("Informe a posição X que deseja tentar: "))
+y = int(input("Informe a posição Y que deseja tentar: "))
+
+if (x, y) in inimigos:
+    acerto = inimigos.remove((x, y))
+    print(f"Você acertou um alvo nas coordendas {(x, y)}")
+else:
+    print(f"Você não acertou nenhum inimigo com as coordenadas: {(x, y)}")
+    
+print(inimigos)
+
 # %%
 
 # SET (Conjuntos)
