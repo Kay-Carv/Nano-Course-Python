@@ -253,3 +253,19 @@ print(dicionario.get("nome"), "\n")
 dicionario.setdefault("diretor", "Guillaume Broche")
 print(dicionario)
 dicionario.get("diretor")
+
+"""
+| Método                                  | Efeito                                                                 |
+|-----------------------------------------|------------------------------------------------------------------------|
+| `dicionario.get(chave)`                 | Retorna o valor associado a uma chave específica.                      |
+| `dicionario.values()`                   | Retorna uma lista com os valores do dicionário.                        |
+| `dicionario.keys()`                     | Retorna uma lista de chaves do dicionário.                             |
+| `dicionario.items()`                    | Retorna uma lista de tuplas contendo chave e valor.                    |
+| `dict.fromkeys(chaves, valor)`          | Retorna um dicionário com base nas chaves especificadas. Pode ou não atribuir um valor fornecido. |
+| `dicionario.setdefault(chave, valor)`   | Retorna o valor de uma determinada chave. Se a chave não existir, é criada com valor None ou o valor informado. |
+| `dicionario.update(chave, valor)`       | Atualiza o dicionário com base na chave e no valor fornecidos.         |
+| `dicionario.copy()`                     | Retorna uma cópia do dicionário.                                       |
+| `dicionario.pop(chave) `                | Remove um item do dicionário com base na chave.                        |
+| `dicionario.popitem()`                  | Remove a última chave e valor inserida no dicionário.                  |
+| `dicionario.clear()`                    | Remove todos os elementos do dicionário.                               |
+"""
