@@ -205,3 +205,51 @@ print(set2)
 | `set.remove()`                        | Remove um elemento do set e retorna um erro caso o elemento não exista.   |
 | `set.discard()`                       | Remove um elemento do set e não retorna um erro caso o elemento não exista. |
 """
+
+# %%
+
+
+# DICIONÁRIOS
+
+"Dicionarios usam esrutura de chave-valor onde associamos uma valor para um chave definida"
+
+dicionario = {
+    "nome":"Clair Obscur: Expedition 3",
+    "estudio":"Kepler Interactive",
+    "lançamento":2025,
+    "valor": 199.99
+
+}
+
+print(type(dicionario))
+print(dicionario["nome"])   # Print de um valor expecifico
+
+# inserção de uma nova chave e valor
+dicionario["genero"] = "RPG"
+print(dicionario)
+
+# Métodos keys
+print(dicionario.keys())    # Mostra apenas as chaves
+print(dicionario.values())  # Mostra apenas valores
+
+for chave in dicionario.keys():
+    print(chave)
+
+for valor in dicionario.values():
+    print(valor)
+
+# Método itens
+
+print(dicionario.items(),"\n")  # Retorna os itens de chave e valores como se fossem uma tupla com 2 indices
+
+for chave, valor in dicionario.items():
+    print(f"{chave} --> {valor})")
+
+# Método get
+print("\n",dicionario.get("diretor")) # Útil para pesquisar chaves que não existem
+print(dicionario.get("nome"), "\n")
+
+#  Método setdefault
+dicionario.setdefault("diretor", "Guillaume Broche")
+print(dicionario)
+dicionario.get("diretor")
