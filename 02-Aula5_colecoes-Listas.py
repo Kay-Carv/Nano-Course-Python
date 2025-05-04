@@ -263,9 +263,59 @@ dicionario.get("diretor")
 | `dicionario.items()`                    | Retorna uma lista de tuplas contendo chave e valor.                    |
 | `dict.fromkeys(chaves, valor)`          | Retorna um dicionário com base nas chaves especificadas. Pode ou não atribuir um valor fornecido. |
 | `dicionario.setdefault(chave, valor)`   | Retorna o valor de uma determinada chave. Se a chave não existir, é criada com valor None ou o valor informado. |
-| `dicionario.update(chave, valor)`       | Atualiza o dicionário com base na chave e no valor fornecidos.         |
+| `dicionario.update({chave: valor})`     | Atualiza o dicionário com base na chave e no valor fornecidos.         |
 | `dicionario.copy()`                     | Retorna uma cópia do dicionário.                                       |
 | `dicionario.pop(chave) `                | Remove um item do dicionário com base na chave.                        |
 | `dicionario.popitem()`                  | Remove a última chave e valor inserida no dicionário.                  |
 | `dicionario.clear()`                    | Remove todos os elementos do dicionário.                               |
 """
+
+
+# %% 
+
+# Criando uma ficha cadastral usando dicionário
+
+opcao = 0
+ficha = {}
+
+while opcao != 4:
+    print("\n---Ficha cadastral---")
+    print("1 - Incluir informações na ficha")
+    print("2 - Recuperar informação da ficha")
+    print("3 - Exibir a ficha completa")
+    print("4 - Sair")
+    opcao = int(input("Selecione uma opção"))
+
+    match opcao:
+        case 1:
+            chave = input("Informe o campo que deseja criar na ficha")
+            valor = input("Informe o dado que deseja cadastrar nessa ficha")
+
+            ficha.update({chave:valor})
+        case 2:
+            # print(f"Os campos disponíveis na fihcha são {ficha.keys()}")
+            print("\nOs campos disponiveis na ficha são: ")
+            for i,chave in enumerate(ficha, start=1):
+                print(f"\t{i}. {chave}")
+
+            opcao_chave = input("Digite o valor da chave que deseja ver")
+            
+            if opcao_chave in ficha.keys():
+                print(f"O campo {opcao_chave} contém o valor {ficha.get(opcao_chave)}")
+            else:
+                print(ficha.get(opcao_chave, "A chave digitada não está na ficha" ))
+
+        case 3:
+            if ficha != {}:
+                print("\n---FICHA CADASTRAL---")
+                for campo, valor in ficha.items():
+                    print(f"\n{campo.upper()} : {valor}")
+            else:
+                print("\nNenhum cadastro foi realizado")
+        case 4:
+            print("\nSaindo do sistema...")
+            break
+        case _:
+            print(f"\nOpção '{opcao}' invalida, tente novamente")
+
+# %%
