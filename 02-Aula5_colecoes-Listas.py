@@ -1,3 +1,10 @@
+#    LISTAS, TUPLAS, SETs, DICIONÁRIOS 
+
+#-------------------------------------------# 
+
+# -----------------------------------------------------------------------------------------
+#           LISTA
+# -----------------------------------------------------------------------------------------
 # Listas de tarefas
 
 # %%
@@ -95,6 +102,10 @@ print(f"Após o uso do sort(reverse=True), a lista é \n{cavaleiros_jedi}")
 
 # %%
 
+# -----------------------------------------------------------------------------------------
+#                       TUPLAS
+# -----------------------------------------------------------------------------------------
+
 # Trabalhando em TUPLAS
 
 "Tem propiedades parecidas com as listas, entretanto a sua principal diferença é a imutalidade. Já que as TUPLAS são imutáveis após a sua criação"
@@ -132,6 +143,10 @@ else:
 print(inimigos)
 
 # %%
+
+# -----------------------------------------------------------------------------------------
+#                       SET (Conjuntos)
+# -----------------------------------------------------------------------------------------
 
 # SET (Conjuntos)
 
@@ -208,6 +223,9 @@ print(set2)
 
 # %%
 
+# -----------------------------------------------------------------------------------------
+#                       DICIONÁRIOS
+# -----------------------------------------------------------------------------------------
 
 # DICIONÁRIOS
 
@@ -319,3 +337,27 @@ while opcao != 4:
             print(f"\nOpção '{opcao}' invalida, tente novamente")
 
 # %%
+# -----------------------------------------------------------------------------------------
+#                               MAP
+# -----------------------------------------------------------------------------------------
+
+# Utilizando MAP
+
+# %%
+lista = ["Python", "JavaScript", "PHP", "Java", "C++", "Cobol"]
+print(f"Lista com as linguagem:\n{lista}\n")
+
+
+mapa = map(len, lista)
+
+print("\n", mapa)
+
+# Output
+#  <map object at 0x000002765960A0E0>
+# Esse é o endereço de memória, logo precisamos converter em uma estrutura
+
+mapa = list(map(len, lista))
+
+print("\nApós enviarmos para lista: \n", mapa)
+
+print(f"\nApesar de termos criado objetos para armazenarem o mapa e a lista convertida, o mesmo efeito poderia ser atingido escrevendo em um print list(map(len, lista)): \n{list(map(len, lista))}")
