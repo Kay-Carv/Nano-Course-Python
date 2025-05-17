@@ -9,58 +9,79 @@ Esse repositório tem como objetivo **documentar** os conteúdos de python visto
 
 # Métodos do python
 
+Métodos são funções associadas a objetos. Eles realizam ações específicas sobre esses objetos e são chamados usando a sintaxe ``objeto.método()``. Em **Python**, diferentes tipos de dados — como **listas, dicionários e sets(conjuntos)** — possuem seus próprios métodos, que permitem manipular ou consultar seus conteúdos de forma prática e eficiente.
+
+---
 
 ## Listas
 
+Listas são estruturas ordenadas e mutáveis que armazenam uma sequência de elementos. Permitem duplicatas e acesso por índice.
 
-| Método                          | Efeito                                                                 |
-|---------------------------------|------------------------------------------------------------------------|
-| `lista.append(elemento)`        | Adiciona um elemento no final da lista.                               |
-| `lista.index(elemento)`         | Retorna o índice de um determinado elemento.                          |
-| `lista.insert(posicao, item)`   | Insere um elemento em uma posição específica, fazendo com que os elementos posteriores a ele recebam novos índices. |
-| `lista.pop()`                   | Remove o último elemento de uma lista.                                |
-| `lista.pop(posicao)`            | Remove o elemento que está em uma posição específica da lista.        |
-| `lista.count("item")`           | Retorna o número de vezes que um elemento aparece na lista.           |
-| `lista.sort()`                  | Ordena a lista em ordem crescente.                                    |
-| `lista.sort(reverse=True)`      | Ordena a lista em ordem decrescente.                                  |
-| `lista.reverse()`               | Inverte a ordem dos elementos de uma lista.                           |
-| `lista.remove(item)`            | Remove um item da lista.                                              |
+| Código de Exemplo                                 | O que faz                                                                     | Resultado esperado                               |
+|---------------------------------------------------|--------------------------------------------------------------------------------|--------------------------------------------------|
+| `lista = ['Bianca', 'Carol', 'Ana', 'Bianca']`    | Cria uma lista com quatro nomes, dois deles repetidos.                        | `['Bianca', 'Carol', 'Ana', 'Bianca']`           |
+| `lista.append('João')`                            | Adiciona **João** no final da lista.                                          | `['Bianca', 'Carol', 'Ana', 'Bianca', 'João']`   |
+| `lista.index('Ana')`                              | Retorna a posição da primeira ocorrência de **Ana**.                          | `2`                                              |
+| `lista.insert(1, 'Lucas')`                        | Insere **Lucas** na posição 1.                                                | `['Bianca', 'Lucas', 'Carol', 'Ana', 'Bianca']`  |
+| `lista.pop()`                                     | Remove o último elemento.                                                     | Remove **Bianca**                                |
+| `lista.pop(2)`                                    | Remove o item na posição 2.                                                   | Remove **Carol**                                 |
+| `lista.count('Bianca')`                           | Conta quantas vezes **Bianca** aparece.                                       | `2`                                              |
+| `lista.sort()`                                    | Ordena a lista em ordem alfabética.                                           | `['Ana', 'Bianca', 'Bianca', 'Carol']`           |
+| `lista.sort(reverse=True)`                        | Ordena a lista em ordem alfabética reversa.                                   | `['Carol', 'Bianca', 'Bianca', 'Ana']`           |
+| `lista.reverse()`                                 | Inverte a ordem da lista.                                                     | Ordem da lista é invertida.                      |
+| `lista.remove('Ana')`                             | Remove a primeira ocorrência de **Ana**.                                      | `['Bianca', 'Carol', 'Bianca']`                  |
+
+---
 
 ## Tuplas
 
+Tuplas são imutáveis, ou seja, não podem ser alteradas após serem criadas. São úteis para representar conjuntos fixos de valores.
+
+| Código de Exemplo                            | O que faz                                                       | Resultado esperado               |
+|----------------------------------------------|------------------------------------------------------------------|----------------------------------|
+| `coordenadas = (10.0, 20.0)`                 | Cria uma tupla com duas coordenadas.                            | `(10.0, 20.0)`                   |
+| `coordenadas[0]`                             | Acessa o primeiro valor da tupla.                               | `10.0`                          |
+| `len(coordenadas)`                           | Retorna o tamanho da tupla.                                     | `2`                             |
+| `'x' in coordenadas`                         | Verifica se `'x'` está presente na tupla.                       | `False`                         |
+| `coordenadas + (30.0,)`                      | Cria nova tupla adicionando valor. Tuplas são imutáveis!        | `(10.0, 20.0, 30.0)`             |
+
+---
 
 ## Sets
 
-| Método                                | Descrição                                                                 |
-|---------------------------------------|---------------------------------------------------------------------------|
-| `set.symmetric_difference(set1, set2)`| Retona um set com os elementos que não se repetem em dois sets.          |
-| `set.union(set1, set2, ...)`          | Retorna um set contendo os elementos dos sets indicados                   |
-| `set.intersection(set1, set2, ...)`   | Retorna um set com os elementos que existem em todos os sets indicados    |
-| `set.isdisjoint(set2)`                | Retorna verdadeiro se os dois sets contêm elementos diferentes e falso se algum dos elementos for igual. |
-| `set.issubset(set2)`                  | Retorna verdadeiro se o set está contido em outro.                        |
-| `set.issuperset(set2)`                | Retorna verdadeiro se um set contém outro set.                            |
-| `set.clear()`                         | Remove todos os elementos do set.                                         |
-| `set.copy()`                          | Retorna uma cópia do set.                                                 |
-| `set.pop()`                           | Remove um elemento aleatório do set.                                      |
-| `set.remove()`                        | Remove um elemento do set e retorna um erro caso o elemento não exista.   |
-| `set.discard()`                       | Remove um elemento do set e não retorna um erro caso o elemento não exista. |
+Sets (ou conjuntos) são coleções não ordenadas de elementos únicos. São ideais para eliminar duplicatas e realizar operações matemáticas como união e interseção.
 
+| Código de Exemplo                                                    | O que faz                                                                   | Resultado esperado                       |
+|------------------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------------------|
+| `conjunto = set([1, 2, 3, 2, 1])`                                      | Cria um set sem elementos duplicados.                                       | `{1, 2, 3}`                              |
+| `conjunto.add(4)`                                                     | Adiciona o número 4.                                                        | `{1, 2, 3, 4}`                           |
+| `conjunto.remove(2)`                                                  | Remove o número 2 (erro se não existir).                                    | `{1, 3, 4}`                              |
+| `conjunto.discard(5)`                                                 | Tenta remover o número 5 (não dá erro se não existir).                      | `{1, 3, 4}`                              |
+| `conjunto2 = {3, 4, 5}`                                                | Cria outro set para operações de conjunto.                                  | `{3, 4, 5}`                              |
+| `conjunto.union(conjunto2)`                                           | Une os dois sets.                                                           | `{1, 3, 4, 5}`                           |
+| `conjunto.intersection(conjunto2)`                                    | Retorna a interseção (elementos em comum).                                  | `{3, 4}`                                 |
+| `conjunto.symmetric_difference(conjunto2)`                             | Elementos que estão em um ou outro, mas não nos dois.                       | `{1, 5}`                                 |
+| `conjunto.issubset(conjunto2)`                                        | Verifica se conjunto está contido em conjunto2.                             | `False`                                  |
+| `conjunto.isdisjoint({10, 11})`                                        | Verifica se não há elementos em comum.                                      | `True`                                   |
+
+---
 
 ## Dicionários
 
-| Método                                  | Efeito                                                                 |
-|-----------------------------------------|------------------------------------------------------------------------|
-| `dicionario.get(chave)`                 | Retorna o valor associado a uma chave específica.                      |
-| `dicionario.values()`                   | Retorna uma lista com os valores do dicionário.                        |
-| `dicionario.keys()`                     | Retorna uma lista de chaves do dicionário.                             |
-| `dicionario.items()`                    | Retorna uma lista de tuplas contendo chave e valor.                    |
-| `dict.fromkeys(chaves, valor)`          | Retorna um dicionário com base nas chaves especificadas. Pode ou não atribuir um valor fornecido. |
-| `dicionario.setdefault(chave, valor)`   | Retorna o valor de uma determinada chave. Se a chave não existir, é criada com valor None ou o valor informado. |
-| `dicionario.update({chave: valor})`     | Atualiza o dicionário com base na chave e no valor fornecidos.         |
-| `dicionario.copy()`                     | Retorna uma cópia do dicionário.                                       |
-| `dicionario.pop(chave) `                | Remove um item do dicionário com base na chave.                        |
-| `dicionario.popitem()`                  | Remove a última chave e valor inserida no dicionário.                  |
-| `dicionario.clear()`                    | Remove todos os elementos do dicionário.                               |
+Dicionários armazenam dados em pares `chave: valor`.
+
+| Código de Exemplo                                               | O que faz                                                       | Resultado esperado                               |
+|------------------------------------------------------------------|------------------------------------------------------------------|--------------------------------------------------|
+| `aluno = {"nome": "Ana", "idade": 22}`                           | Cria um dicionário com duas informações.                         | `{"nome": "Ana", "idade": 22}`                   |
+| `aluno["nome"]`                                                  | Acessa o valor da chave `"nome"`.                                | `"Ana"`                                          |
+| `aluno.get("curso", "Não definido")`                             | Acessa valor de `"curso"` ou retorna valor padrão.               | `"Não definido"`                                 |
+| `aluno["idade"] = 23`                                            | Atualiza o valor da chave `"idade"`.                             | `{"nome": "Ana", "idade": 23}`                   |
+| `aluno.update({"curso": "Python"})`                              | Adiciona a chave `"curso"` ao dicionário.                         | `{"nome": "Ana", "idade": 23, "curso": "Python"}`|
+| `list(aluno.keys())`                                             | Retorna uma lista com as chaves.                                 | `["nome", "idade", "curso"]`                     |
+| `list(aluno.values())`                                           | Retorna uma lista com os valores.                                | `["Ana", 23, "Python"]`                          |
+| `list(aluno.items())`                                            | Retorna uma lista de tuplas (chave, valor).                      | `[("nome", "Ana"), ("idade", 23), ...]`          |
+| `aluno.pop("idade")`                                             | Remove a chave `"idade"`.                                        | Remove idade e retorna `23`                      |
+| `aluno.clear()`                                                  | Remove todos os elementos do dicionário.                         | `{}`                                             |
 
 ### Deque
 A estrutura deque permite inserção e remoção de elementos
@@ -84,3 +105,9 @@ Uma fila de tarefas onde podemos adicionar e remover tarefas do início ou do fi
 | `tarefas.extendleft(["Escovar dentes", "Lavar rosto"])`                 | Adiciona várias tarefas ao início (em ordem invertida).                  | `deque(["Lavar rosto", "Escovar dentes", ...])`                           |
 | `tarefas.rotate(1)`                                                     | Move os itens 1 posição à direita.                                       | O último item vai para o início.                                          |
 | `tarefas.rotate(-2)`                                                    | Move os itens 2 posições à esquerda.                                     | Os dois primeiros itens vão para o final.                                 |
+
+---
+
+## Tópicos avançados
+
+![Status](https://img.shields.io/badge/Documentacao%20de%20topicos%20Avancados-%20Status:em%20desenvolvimento-yellow)
